@@ -1,0 +1,85 @@
+﻿
+<div class="d-flex justify-content-between">
+    <p class="h2">Empleados</p>
+   
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalForm" id="btnModal">Agregar</button>
+</div>
+<img src="~/img/empleado-removebg-preview.png" width="200" height="100" style="margin-left:450px; margin-bottom:20px;"/>
+<hr />
+<div class="alert" role="alert" id="alertInfo" style="display: none;"></div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero de Nómina</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody id="showEmpleados">
+           
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="background-color:#ddeceb">
+    <div class="modal-dialog" >
+        <div class="modal-content" style="background-color:#ddeceb; border-color: cadetblue;  border-width: 5px;">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalLabel">Agregar Empleado</h1>
+                
+            </div>
+            <hr style="width:490px; height:5px; background-color: #25716d; " />
+            <div class="modal-body">
+                <div class="row g-2">
+                    <div class="alert alert-info" role="alert" id="alertForm" style="display: none;">
+                        Por favor, ingresa los datos solicitados.
+                    </div>
+                  
+                    <div class="col-12">
+                        <input type="hidden" id="txtIdEmpleado" value="" />
+                        <label for="txtNomina">Número de Nómina</label>
+                        <input type="text" class="form-control" id="txtNomina" placeholder="El Número de Nómina se generará en automático" readonly />
+                        <label class="invalido" id="lblNomina"></label>
+                    </div>
+                    <div class="col-12">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" class="form-control" id="txtNombre" />
+                        <label class="invalido" id="lblNombre"></label>
+                    </div>
+                    <div class="col-12">
+                        <label for="txtApellidoPaterno">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="txtApellidoPaterno" />
+                        <label class="invalido" id="lblApellidoPaterno"></label>
+                    </div>
+                    <div class="col-12">
+                        <label for="txtApellidoMaterno">Apellido Materno</label>
+                        <input type="text" class="form-control" id="txtApellidoMaterno" />
+                        <label class="invalido" id="lblApellidoMaterno"></label>
+                    </div>
+                    <div class="col-12">
+                        <label for="ddlEntidadFede">Entidad Federativa</label>
+                        <select id="ddlEntidadFede" class="form-select">
+                        </select>
+                        <label class="invalido" id="lblEntidadFede"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="closeModalForm" data-bs-dismiss="modal" hidden>Cancelar</button>
+
+                <button type="button" class="btn btn-outline-danger" id="cancelForm">Cancelar</button>
+                <button type="button" class="btn btn-outline-success" id="btnForm">Guardar</button>
+                <button type="button" class="btn btn-outline-success" id="btnFormUpdate" style="display: none;">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="~/js/Empleado.js" asp-append-version="true"></script>
